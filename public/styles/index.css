@@ -5,9 +5,22 @@ html, body {
   margin: 0;
 }
 
+@font-face {
+  font-family: "Mosco_Mule";
+  src: url("/swipe/fonts/Mosco_Mule.ttf") format("truetype");
+}
+
+.hidden {
+  color:white;
+  font-family: "Mosco_Mule", monospace;
+  position: absolute;
+  left: -100000px;
+}
+
 body {
   background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Mosco_Mule", monospace;
 }

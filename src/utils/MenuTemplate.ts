@@ -33,11 +33,13 @@ export default class MenuTemplate {
   private fontSize = 34;
   private color = "#fff";
   private align = "center";
+  private family = "Mosco_Mule";
 
   private textOpt = () => { return {
     fontSize: `${this.fontSize}px`,
     color: this.color,
     align: this.align,
+    fontFamily: this.family,
   }};
 
   constructor(

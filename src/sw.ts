@@ -10,11 +10,12 @@ const appShellFiles = [
   `${hostPrefix}/styles/index.css`,
   `${hostPrefix}/images/icon.png`,
   `${hostPrefix}/images/icon_512.png`,
+  `${hostPrefix}/fonts/Mosco_Mule.ttf`,
 ];
 
 // Content to update at each connection
 
-const onlineContent = [];
+const onlineContent: string[] = [];
 
 
 self.addEventListener("install", (e) => {

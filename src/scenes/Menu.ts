@@ -1,6 +1,7 @@
 import { Scene } from "phaser";
 
 import MenuTemplate, {Actions} from  "../utils/MenuTemplate";
+import Level from "./Level";
 
 export default class Menu extends Scene {
   public static readonly STATE_KEY: string = "scene_menu_key";
@@ -27,12 +28,13 @@ export default class Menu extends Scene {
 
   public create(): void {
     this.add.rectangle(0, 0, this.cameras.main.width * 2, this.cameras.main.height * 2, 0xcc2222);
+    const paddingLeft = (this.cameras.main.width / 2) - 100;
     this._menu = new MenuTemplate([
       {
         name: "Play",
         action: (act: Actions) => { if (act === Actions.Enter) {
           // start game
-          // this.scene.start(...);
+          this.scene.start(Level.STATE_KEY);
         }}
       }, {
         name: "Settings",
@@ -41,7 +43,7 @@ export default class Menu extends Scene {
           this._menu.hide();
         }}
       }
-    ], this);
+    ], this, 0, paddingLeft);
 
     this._menu.draw();
     this._keys = {
@@ -52,6 +54,7 @@ export default class Menu extends Scene {
 
     this.input.on('pointerdown', (event) => {
       this._menu.select(event.position.x, event.position.y);
+      this._menu.keyPressed(Actions.Enter);
     })
   }
 

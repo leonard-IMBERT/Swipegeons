@@ -1,4 +1,5 @@
 import { Game } from "phaser";
+import Level from "./scenes/Level";
 
 import Menu from "./scenes/Menu";
 
@@ -19,6 +20,7 @@ export default class Swipegeons extends Game {
 
     this.isMobile = window.innerWidth < 600 || window.innerHeight < 800;
 
+    this.scene.add(Level.STATE_KEY, new Level());
     this.scene.add(Menu.STATE_KEY, new Menu());
     this.scene.start(Menu.STATE_KEY);
   }
