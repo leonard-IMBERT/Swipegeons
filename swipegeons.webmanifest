@@ -1,0 +1,9 @@
+{
+  "name": "Swipegeons, the game",
+  "short_name": "Swipegeons",
+  "description": "A little game of swiping",
+  "start_url": "/",
+  "display": "fullscreen",
+  "theme_color": "#16a300",
+  "background_color": "#16a300"
+}

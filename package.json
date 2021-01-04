@@ -1,0 +1,29 @@
+{
+  "name": "swipegeons",
+  "version": "0.0.1",
+  "description": "Swipe throught the dungeon",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "parcel build src/main.ts src/main.ts ",
+    "watch": "parcel watch src/main.ts src/main.ts --public-url /"
+  },
+  "keywords": [
+    "game",
+    "web"
+  ],
+  "author": "Leonard Imbert <imbert418@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
+    "eslint": "^7.17.0",
+    "parcel": "^1.12.4",
+    "typescript": "^4.1.3"
+  },
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "phaser": "^3.50.1"
+  }
+}
