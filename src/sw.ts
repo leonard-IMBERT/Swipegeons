@@ -9,6 +9,7 @@ const appShellFiles = [
   `${hostPrefix}/main.js`,
   `${hostPrefix}/styles/index.css`,
   `${hostPrefix}/images/icon.png`,
+  `${hostPrefix}/images/icon_512.png`,
 ];
 
 // Content to update at each connection

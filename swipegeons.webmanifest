@@ -2,8 +2,17 @@
   "name": "Swipegeons, the game",
   "short_name": "Swipegeons",
   "description": "A little game of swiping",
-  "start_url": "/",
+  "start_url": "/swipe/",
   "display": "fullscreen",
   "theme_color": "#16a300",
-  "background_color": "#16a300"
+  "background_color": "#16a300",
+  "icons": [{
+    "src":"images/icon_512.png",
+    "sizes":"512x512",
+    "type":"image/png"
+  }, {
+    "src":"images/icon.png",
+    "sizes":"24x24",
+    "type":"image/png"
+  }]
 }
