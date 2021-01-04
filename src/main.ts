@@ -1,7 +1,7 @@
 import Swipegeons from "./Swipegeons";
 // Querying the canvas
 const GAME = document.querySelector("canvas#game");
-const hostPrefix = "/swipe";
+const hostPrefix = "";//"/swipe";
 
 if(GAME == null || !(GAME instanceof HTMLCanvasElement)) {
   throw new Error("Game canvas not found");

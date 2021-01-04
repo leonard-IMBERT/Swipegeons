@@ -1,11 +1,14 @@
 /* eslint-env serviceworker */
 const cacheKey = 'Swipegeons';
 
+const hostPrefix = "/swipe";
+
 // Content to cache like images, fonts, ... neededs to run the app
 const appShellFiles = [
-  "/",
-  "/main.js",
-  "/styles/index.css",
+  `${hostPrefix}/`,
+  `${hostPrefix}/main.js`,
+  `${hostPrefix}/styles/index.css`,
+  `${hostPrefix}/images/icon.png`,
 ];
 
 // Content to update at each connection
@@ -18,7 +21,7 @@ self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(cacheKey).then((cache) => {
     console.log("[Service Worker] Caching all: app shell and content");
     return cache.addAll(appShellFiles.concat(onlineContent));
-  }))
+  }).catch(console.error))
 });
 
 self.addEventListener("fetch", (e) => {
