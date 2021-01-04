@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "parcel build src/main.ts src/main.ts ",
-    "watch": "parcel watch src/main.ts src/main.ts --public-url /"
+    "build": "parcel build src/main.ts src/sw.ts ",
+    "watch": "parcel watch src/main.ts src/sw.ts --public-url /"
   },
   "keywords": [
     "game",
