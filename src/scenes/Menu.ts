@@ -6,9 +6,9 @@ import Level from "./Level";
 export default class Menu extends Scene {
   public static readonly STATE_KEY: string = "scene_menu_key";
 
-  private _menu: MenuTemplate;
+  private _menu?: MenuTemplate;
   
-  private _keys: {
+  private _keys?: {
     up: Phaser.Input.Keyboard.Key,
     down: Phaser.Input.Keyboard.Key,
     enter: Phaser.Input.Keyboard.Key,
@@ -40,7 +40,7 @@ export default class Menu extends Scene {
         name: "Settings",
         action: (act: Actions) => { if (act === Actions.Enter) {
           // show options
-          this._menu.hide();
+          this._menu?.hide();
         }}
       }
     ], this, 0, paddingLeft);
@@ -52,18 +52,20 @@ export default class Menu extends Scene {
       enter: this.input.keyboard.addKey("ENTER"),
     }
 
-    this.input.on('pointerdown', (event) => {
-      this._menu.select(event.position.x, event.position.y);
-      this._menu.keyPressed(Actions.Enter);
+    this.input.on('pointerdown', (event: any) => {
+      this._menu?.select(event.position.x, event.position.y);
+      this._menu?.keyPressed(Actions.Enter);
     })
   }
 
   public update(): void {
-    if (this.input.keyboard.checkDown(this._keys.up, 1000)) this._menu.keyUp();
+    if(this._keys) {
+      if (this.input.keyboard.checkDown(this._keys.up, 1000)) this._menu?.keyUp();
 
-    if (this.input.keyboard.checkDown(this._keys.down, 1000)) this._menu.keyDown();
+      if (this.input.keyboard.checkDown(this._keys.down, 1000)) this._menu?.keyDown();
 
-    if (this.input.keyboard.checkDown(this._keys.enter, 1000)) this._menu.keyPressed(Actions.Enter);
+      if (this.input.keyboard.checkDown(this._keys.enter, 1000)) this._menu?.keyPressed(Actions.Enter);
+    }
   }
   
 }
